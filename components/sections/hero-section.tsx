@@ -162,13 +162,13 @@ function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden min-h-[75vh] flex items-center justify-center py-4 sm:py-6 md:py-8 lg:py-10"
+      className="relative w-full overflow-hidden min-h-[60vh] sm:min-h-[65vh] md:min-h-[70vh] lg:min-h-[75vh] flex items-center justify-center py-4 sm:py-6 md:py-8 lg:py-10"
       aria-labelledby="hero-heading"
     >
       {/* No background element as per requirements */}
       
       <motion.div 
-        className="container px-4 md:px-6 relative z-10 flex flex-col items-center justify-center space-y-4"
+        className="container px-4 md:px-6 relative z-10 flex flex-col items-center justify-center space-y-3 sm:space-y-4"
       >
         <div className="flex justify-center pb-2">
           <div className="inline-flex items-center rounded-full bg-gradient-to-r from-[#fffef9] to-[#fffcf0] border border-amber-100/40 shadow-sm px-3 py-1 text-sm font-medium text-amber-800">
@@ -188,19 +188,19 @@ function HeroSection() {
           </h1>
           
           <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-3 text-premium-heading"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-2 sm:mb-3 text-premium-heading text-center flex flex-wrap justify-center gap-x-1 sm:gap-x-2 gap-y-0"
             variants={itemVariants}
           >
-            <span className="bg-gradient-to-r from-[#FF5B14] via-[#FF7A00] to-[#FF9A56] bg-clip-text text-transparent drop-shadow-sm font-extrabold animate-text-shine mr-1">Transform</span> 
-            <span className="text-white font-extrabold mr-1">Your</span> 
-            <span className="text-white font-extrabold mr-1">Business</span> 
-            <span className="text-white font-extrabold mr-1">With</span> 
-            <span className="bg-gradient-to-r from-[#FF5B14] via-[#FF7A00] to-[#FF9A56] bg-clip-text text-transparent font-extrabold animate-text-shine mr-1">SAP</span>
+            <span className="bg-gradient-to-r from-[#FF5B14] via-[#FF7A00] to-[#FF9A56] bg-clip-text text-transparent drop-shadow-sm font-extrabold animate-text-shine">Transform</span> 
+            <span className="text-white font-extrabold">Your</span> 
+            <span className="text-white font-extrabold">Business</span> 
+            <span className="text-white font-extrabold">With</span> 
+            <span className="bg-gradient-to-r from-[#FF5B14] via-[#FF7A00] to-[#FF9A56] bg-clip-text text-transparent font-extrabold animate-text-shine">SAP</span>
             <span className="bg-gradient-to-r from-[#FF5B14] via-[#FF7A00] to-[#FF9A56] bg-clip-text text-transparent font-extrabold animate-text-shine">Solutions</span>
           </motion.h2>
 
           <motion.p 
-            className="mx-auto max-w-xl sm:max-w-2xl md:text-xl lg:text-2xl text-premium-text font-medium"
+            className="mx-auto max-w-[90%] sm:max-w-xl md:max-w-2xl text-sm sm:text-base md:text-xl lg:text-2xl text-premium-text font-medium text-center px-2"
             variants={itemVariants}
           >
             We offer a complete range of SAP Solutions to help businesses of all sizes streamline operations, gain insights, and accelerate growth.
@@ -215,7 +215,7 @@ function HeroSection() {
         >
           <motion.div 
             variants={itemVariants}
-            className="relative h-7 sm:h-8 max-w-[14rem] mx-auto overflow-hidden rounded-md bg-gradient-to-r from-[#fffef9] to-[#fffcf0] shadow-sm border border-amber-100/40"
+            className="relative h-7 sm:h-8 w-[90%] max-w-[14rem] mx-auto overflow-hidden rounded-md bg-gradient-to-r from-[#fffef9] to-[#fffcf0] shadow-sm border border-amber-100/40"
           >
             <AnimatePresence mode="wait">
               <motion.div
@@ -230,7 +230,7 @@ function HeroSection() {
                   <div className="flex-shrink-0 mr-2 p-1 rounded-full bg-amber-50">
                     {features[activeFeature].icon}
                   </div>
-                  <span className="text-xs font-bold text-slate-800">
+                  <span className="text-[10px] xs:text-xs font-bold text-slate-800">
                     {features[activeFeature].title}
                   </span>
                 </div>
@@ -240,7 +240,7 @@ function HeroSection() {
         </motion.div>
 
         <motion.div 
-          className="w-full max-w-3xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 pt-1 pb-3"
+          className="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-1.5 xs:gap-2 pt-1 pb-3"
           variants={statsContainerVariants}
           initial="hidden"
           animate="visible"
@@ -248,33 +248,33 @@ function HeroSection() {
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              className="flex flex-col items-center justify-center py-1.5 px-2 rounded-lg bg-[#fffff0] border border-[#fffff0]/30 text-center shadow-sm"
+              className="flex flex-col items-center justify-center py-1.5 px-1 sm:px-2 rounded-lg bg-[#fffff0] border border-[#fffff0]/30 text-center shadow-sm"
               variants={statsItemVariants}
             >
               <div className="flex items-center justify-center space-x-1">
-                <span className="text-xs text-slate-800">{stat.icon}</span>
-                <span className={`text-base font-bold bg-gradient-to-r ${stat.accent} bg-clip-text text-transparent`}>
+                <span className="text-[10px] xs:text-xs text-slate-800">{stat.icon}</span>
+                <span className={`text-sm xs:text-base font-bold bg-gradient-to-r ${stat.accent} bg-clip-text text-transparent`}>
                   {stat.value}
                 </span>
               </div>
               <div>
-                <h3 className="text-[10px] font-medium text-slate-900">{stat.label}</h3>
-                <p className="text-[8px] text-slate-800">{stat.description}</p>
+                <h3 className="text-[9px] xs:text-[10px] sm:text-xs font-medium text-slate-900">{stat.label}</h3>
+                <p className="text-[7px] xs:text-[8px] sm:text-[9px] text-slate-800">{stat.description}</p>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
         <motion.div
-          className="pt-0 flex flex-col sm:flex-row gap-3 sm:gap-4"
+          className="pt-1 sm:pt-0 flex flex-col xs:flex-row gap-2 xs:gap-3 sm:gap-4 w-full max-w-xs xs:max-w-md sm:max-w-none"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.div variants={itemVariants}>
             <Button 
-              className="bg-[#E84A0E] hover:bg-[#E84A0E]/90 text-white group w-full sm:w-auto"
-              size="lg"
+              className="bg-[#E84A0E] hover:bg-[#E84A0E]/90 text-white group w-full text-xs sm:text-sm md:text-base"
+              size="default" 
               asChild
             >
               <Link href="/contact" className="flex items-center">
@@ -285,8 +285,8 @@ function HeroSection() {
           </motion.div>
           <motion.div variants={itemVariants}>
             <Button 
-              className="bg-[#E84A0E] hover:bg-[#E84A0E]/90 text-white w-full sm:w-auto"
-              size="lg"
+              className="bg-[#E84A0E] hover:bg-[#E84A0E]/90 text-white w-full text-xs sm:text-sm md:text-base"
+              size="default"
               asChild
             >
               <Link href="/about" className="flex items-center">
@@ -300,6 +300,36 @@ function HeroSection() {
       
       {/* Add minimal CSS for text animation */}
       <style jsx global>{`
+        /* Add custom screen size for extra small devices */
+        @media (min-width: 480px) {
+          .xs\:text-xs {
+            font-size: 0.75rem;
+            line-height: 1rem;
+          }
+          .xs\:text-base {
+            font-size: 1rem;
+            line-height: 1.5rem;
+          }
+          .xs\:text-\[8px\] {
+            font-size: 8px;
+          }
+          .xs\:text-\[10px\] {
+            font-size: 10px;
+          }
+          .xs\:gap-2 {
+            gap: 0.5rem;
+          }
+          .xs\:gap-3 {
+            gap: 0.75rem;
+          }
+          .xs\:flex-row {
+            flex-direction: row;
+          }
+          .xs\:max-w-md {
+            max-width: 28rem;
+          }
+        }
+
         @keyframes text-shine {
           0% {
             background-position: 0% 50%;
